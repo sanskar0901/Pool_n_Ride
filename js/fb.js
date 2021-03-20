@@ -9,14 +9,30 @@ console.log('working?')
 firebase.auth().onAuthStateChanged(function (user) {
   console.log(user.uid)
   if (user.uid) {
-    document.getElementById("login-a").style.display = "none";
-    document.getElementById("signup-a").style.display = "none";
-  } else {
-    document.getElementById("login-a").style.display = "block";
-    document.getElementById("signup-a").style.display = "block";
-    console.log('hi')
+    var db = firebase.database().ref('user/' + user.uid + '/user_name');
+    db.on('value',(snapshot) =>{
+      const datas = snapshot.val();
+      document.getElementById("wlcm").innerHTML = 'Welcome, ' + datas;
+    });
+    document.getElementById("buttuns-id").style.display = "none";
+    document.getElementById("wlcm-part").style.display = "flex";
+    document.getElementById("logout-a").style.display = "inline-block";
+  }
+   else {
+    document.getElementById("buttuns-id").style.display = "inline-block"; 
+    document.getElementById("wlcm-part").style.display = "none";     
+    console.log(user.uid);
   }
   
+});
+document.getElementById("logout-a").addEventListener('click',(e)=>{
+  e.preventDefault();
+  firebase.auth().signOut().then(function() {
+    console.log('Signed Out');
+  }, function(error) {
+    console.error('Sign Out Error', error);
+  });
+  window.location.reload();
 });
 signup.addEventListener('click', (e) => {
   e.preventDefault();
@@ -53,8 +69,7 @@ login.addEventListener('click', (e) => {
       var user = userCredential.user;;
       // ...
 
-      document.getElementById("login-a").style.display() = "none";
-      document.getElementById("loginModal").setAttribute("aria-hidden", "false")
+      document.getElementById("buttuns-id").style.display = "none";
     })
     .catch((error) => {
       var errorCode = error.code;

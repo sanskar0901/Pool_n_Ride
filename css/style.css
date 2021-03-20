@@ -992,12 +992,32 @@ ul.article-meta {
   text-align: center;
   color: #00ff99;
 }
+#buttuns {
+  display: inline-block;
+}
 #login-a {
   border-style: solid;
   border-radius: 1px;
   border-width: 3px;
   padding: 4px 25px 4px 25px;
   color: #00ff99;
+}
+#smth {
+  padding: 0px;
+  margin: 0px;
+  width: 70px;
+  height: 48px;
+  color: #00ff99;
+}
+#logout-a {
+  border-style: solid;
+  border-radius: 1px;
+  border-width: 3px;
+  padding: 0px 25px 0px 25px;
+  color: #00ff99;
+  margin-right: 10px;
+
+  display: none;
 }
 #signup-a {
   border-style: solid;
@@ -1015,6 +1035,15 @@ ul.article-meta {
   border-width: 3px;
   border-color: #6e7880;
 }
+#logout-a:hover {
+  transition: all 0.3s;
+  background-color: #6e7880;
+  color: white;
+  border-style: solid;
+  border-radius: 1px;
+  border-width: 3px;
+  border-color: #6e7880;
+}
 #signup-a:hover {
   transition: all 0.3s;
   background-color: #6e7880;
@@ -1023,6 +1052,9 @@ ul.article-meta {
   border-radius: 1px;
   border-width: 3px;
   border-color: #6e7880;
+}
+#wlcm {
+  padding-left: 50px;
 }
 /* === Login form === */
 .modal-header {
