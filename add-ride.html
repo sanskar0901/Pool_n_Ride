@@ -6,7 +6,7 @@
 
         <!-- Basic Page Needs -->
         <meta charset="utf-8">
-        <title>My ride - Add ride</title>
+        <title>Add ride</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,17 +40,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin=""/>
   <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
-        type="text/css">
+        type="text/plain">
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
           integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
           crossorigin=""></script>
   <script src="//unpkg.com/leaflet-gesture-handling"></script>
 
-          <script defer src="map2.js"></script>
+          <script defer src="js/map.js"></script>
     </head>
 
     <body>
@@ -119,7 +121,7 @@
                                         <div class="col-md-4 col-sm-12 col-xs-12">
 
                                             <div class="logo">
-                                                <h1>My ride</h1>
+                                                <h1>Pool n Ride</h1>
                                             </div><!-- end .logo -->
 
                                         </div><!-- end .col-sm-4 -->
@@ -246,7 +248,6 @@
     
         </div>
     </div>
-    <div id="map" style="width: 1000px; height: 1000px;"></div>
     <footer id="footer">
 
         <div class="footer-copyright">
