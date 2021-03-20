@@ -55,9 +55,9 @@ Transportation is a major issue these days especially in India. One of the most 
 
 
 ### Screenshots
-Screenshots of website (1)
-Screenshots of website (1)
-Screenshots of Developer page
+Screenshots of website (1)  <br>
+Screenshots of website (1)  <br>
+Screenshots of Developer page <br>
 
 
 ## Timeline ⏰
