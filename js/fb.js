@@ -7,8 +7,7 @@ const mobile = document.getElementById('s-mobile');
 const database = firebase.database();
 console.log('working?')
 firebase.auth().onAuthStateChanged(function (user) {
-  console.log(user.uid)
-  if (user.uid) {
+  if (user!=null) {
     var db = firebase.database().ref('user/' + user.uid + '/user_name');
     db.on('value',(snapshot) =>{
       const datas = snapshot.val();
@@ -20,8 +19,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
    else {
     document.getElementById("buttuns-id").style.display = "inline-block"; 
-    document.getElementById("wlcm-part").style.display = "none";     
-    console.log(user.uid);
+    document.getElementById("wlcm-part").style.display = "none";    
   }
   
 });
@@ -36,26 +34,31 @@ document.getElementById("logout-a").addEventListener('click',(e)=>{
 });
 signup.addEventListener('click', (e) => {
   e.preventDefault();
-  database.ref('/user/' + namee.value).set({
-    user_email: email.value,
-    user_pass: pasword.value,
-    user_mob: mobile.value,
-    user_name: namee.value
-
-  });
+  
 
   firebase.auth().createUserWithEmailAndPassword(email.value, pasword.value)
-    .then((userCredential) => {
+    .then(function success(userData){
       // Signed in 
-      var user = userCredential.user;
+      var user = userData.user.uid;
+      console.log(user);
       // ...
+      database.ref('/user/' + user).set({
+        user_email: email.value,
+        user_pass: pasword.value,
+        user_mob: mobile.value,
+        user_name: namee.value
+        
     })
+    
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
       // ..
     });
+    
+      });
   alert('signed up')
+  window.location.reload();
 });
 
 login.addEventListener('click', (e) => {
@@ -79,5 +82,5 @@ login.addEventListener('click', (e) => {
       console.log(errorMessage);
     });
 
-
+    window.location.reload();
 });
