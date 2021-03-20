@@ -9,11 +9,14 @@ console.log('working?')
 firebase.auth().onAuthStateChanged(function (user) {
   console.log(user.uid)
   if (user.uid) {
-    document.getElementById("buttuns").style.display() = "none";
+    document.getElementById("login-a").style.display = "none";
+    document.getElementById("signup-a").style.display = "none";
   } else {
-    document.getElementById("buttuns").style.display() = "block";
+    document.getElementById("login-a").style.display = "block";
+    document.getElementById("signup-a").style.display = "block";
     console.log('hi')
   }
+  
 });
 signup.addEventListener('click', (e) => {
   e.preventDefault();
