@@ -82,5 +82,5 @@ login.addEventListener('click', (e) => {
       console.log(errorMessage);
     });
 
-    window.location.reload();
+    //window.location.reload();
 });
