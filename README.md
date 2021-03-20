@@ -30,7 +30,7 @@ Society cannot exist without incessant and necessary changes, and these changes 
 2. Find strong prospects for the car pool to be implemented in daily use by people.
 
 ## **Link to our deployed website:** 
-https://keen-cori-249c4e.netlify.app/index.html
+Link:  https://keen-cori-249c4e.netlify.app/index.html
 
 ## About Our project 🔧
 
